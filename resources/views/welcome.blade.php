@@ -884,7 +884,17 @@
             Картинки кидать в public-images
             'path_img' => './images/эскапе.jpg',
             <img src="{{ asset($tour->path_img) }}" alt="Эскапе" style="max-width: 300px;">
-            
+
+
+            1. заносим проект в htdocs
+            2. настроить файл - D:\xampp\apache\conf\extra\httpd-vhosts.conf
+            <VirtualHost *:80>
+                DocumentRoot "D:/xampp/htdocs/laravel/public" ## <- путь до вашего проекта, в папку /public
+                ServerName dummy-host2.example.com ## <- мусор
+            </VirtualHost>
+            3. запустить проект (apache, mysql, php artisan serve, npm run build (!!!)
+            4. перезагрузить нахер xamp
+            5. скинуть свой ip
             --}}
         </div>
     </div>
