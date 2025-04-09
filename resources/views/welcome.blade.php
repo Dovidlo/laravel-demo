@@ -879,7 +879,13 @@
             Изменить миграции по фото
             Для регистрации нужно искать в файликах (http-controllers-registered, resources-views-auth,
             http-request-auth)
-            Поменять название сайта (config-app, views-layouts) --}}
+            Поменять название сайта (config-app, views-layouts) 
+
+            Картинки кидать в public-images
+            'path_img' => './images/эскапе.jpg',
+            <img src="{{ asset($tour->path_img) }}" alt="Эскапе" style="max-width: 300px;">
+            
+            --}}
         </div>
     </div>
 </body>
