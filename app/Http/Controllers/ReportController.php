@@ -35,9 +35,11 @@ class ReportController extends Controller
 
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string'],
+            'description' => ['required', 'string', 'max:255'],
             'path_img' => 'image|mimes:png,jpg,jpeg,gif|max:800',
         ]);
+
+        // $result = $request->title * $request->description;
 
         $imageName = time() . '.' . $request['path_img']->extension();
         $request['path_img']->move(public_path('images'), $imageName);
@@ -50,7 +52,7 @@ class ReportController extends Controller
             "status" => "Новая",
         ]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('reports.create'); //Чтоб вывести сумму чего либо или сообщение->with('status', 'Сумма: ' . $result)
     }
 
     public function update(Request $request) {
