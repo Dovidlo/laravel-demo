@@ -29,6 +29,10 @@ class ReportController extends Controller
         //     return redirect()->back()->withErrors(['report' => 'Вы уже создали заявку.']);
         // } ПРОВЕРКА УНИКАЛЬНОСТИ
 
+        // для уведомлений
+        // composer require php-flasher/flasher-laravel
+        // php artisan flasher:install
+
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],

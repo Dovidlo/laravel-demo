@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            // $table->string('time'); time в стринг
             $table->string('description');
             $table->foreignId('user_id')->constrained(); //->unique(); если надо только 1 заявку от пользователя
             $table->string('path_img')->nullable();
